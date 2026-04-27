@@ -1,9 +1,22 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { DEALS, getWhatsAppUrl } from '../constants';
-import { Tag, ShoppingCart, CheckCircle2, Utensils } from 'lucide-react';
+import { DEALS } from '../constants';
+import { Tag, ShoppingCart, CheckCircle2, Utensils, Plus } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Deals: React.FC = () => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (deal: any) => {
+    addToCart({
+      id: deal.id,
+      name: deal.name,
+      price: deal.price,
+      quantity: 1,
+      image: deal.image
+    });
+  };
+
   return (
     <div className="container mx-auto px-4 py-12 min-h-screen">
       <div className="text-center mb-16">
@@ -67,15 +80,13 @@ const Deals: React.FC = () => {
                   <p className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-1">Total Price</p>
                   <p className="text-3xl font-serif font-bold text-gold">Rs. {deal.price}</p>
                 </div>
-                <a
-                  href={getWhatsAppUrl(deal.name, deal.price)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => handleAddToCart(deal)}
                   className="bg-white text-black px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-gold hover:text-white transition-all shadow-lg group/btn"
                 >
-                  <ShoppingCart className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-                  Order
-                </a>
+                  <Plus className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
+                  Add to Cart
+                </button>
               </div>
             </div>
           </motion.div>

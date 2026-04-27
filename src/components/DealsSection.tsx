@@ -1,9 +1,22 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { DEALS, WHATSAPP_NUMBER } from '../constants';
-import { Tag, ShoppingCart, MessageCircle } from 'lucide-react';
+import { DEALS } from '../constants';
+import { Tag, Plus, MessageCircle } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const DealsSection: React.FC = () => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (deal: any) => {
+    addToCart({
+      id: deal.id,
+      name: deal.name,
+      price: deal.price,
+      quantity: 1,
+      image: deal.image
+    });
+  };
+
   return (
     <section id="deals" className="container mx-auto px-4 scroll-mt-24">
       <div className="text-center mb-16">
@@ -28,7 +41,7 @@ const DealsSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all luxury-border"
+            className="group relative bg-[#111111] border border-white/10 rounded-3xl overflow-hidden hover:border-gold/30 transition-all shadow-xl"
           >
             {/* Deal Image */}
             <div className="aspect-[16/10] overflow-hidden relative">
@@ -44,7 +57,7 @@ const DealsSection: React.FC = () => {
             </div>
 
             <div className="p-8">
-              <h3 className="text-2xl font-serif font-bold text-white mb-4">{deal.name}</h3>
+              <h3 className="text-2xl font-serif font-bold text-white mb-4 group-hover:text-gold transition-colors">{deal.name}</h3>
               
               <div className="space-y-2 mb-8">
                 {deal.items.map((item, idx) => (
@@ -55,15 +68,13 @@ const DealsSection: React.FC = () => {
                 ))}
               </div>
 
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi, main ${deal.name} order karna chahta hoon. Details confirm kar dein.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => handleAddToCart(deal)}
                 className="w-full inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-dark text-white py-4 rounded-xl font-bold transition-all shadow-xl shadow-gold/20 group/btn"
               >
-                <MessageCircle className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-                Order on WhatsApp
-              </a>
+                <Plus className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
+                Add to Cart
+              </button>
             </div>
           </motion.div>
         ))}

@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center">
           <div className="text-center">
             <MapPin className="w-12 h-12 text-gold mx-auto mb-4" />
-            <p className="text-white font-serif text-xl font-bold mb-2">Alaska Café & Fast Food</p>
+            <p className="text-white font-serif text-xl font-bold mb-2">Alaska Café & Fast Food Ghotki</p>
             <p className="text-gray-400">Defence Shopping Mall, Devery Road, Ghotki</p>
           </div>
         </div>

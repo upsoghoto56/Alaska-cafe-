@@ -53,8 +53,8 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 'b8', name: 'Veg Cheese Burger', category: 'burger', price: 200, image: 'https://images.pexels.com/photos/3864682/pexels-photo-3864682.jpeg?auto=compress&cs=tinysrgb&w=800' },
 
   // BROAST
-  { id: 'br1', name: 'Special Broast', category: 'broast', price: 550, image: 'https://images.pexels.com/photos/10361459/pexels-photo-10361459.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'br2', name: 'Full Cheese Broast', category: 'broast', price: 500, image: 'https://images.pexels.com/photos/14686448/pexels-photo-14686448.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'br1', name: 'Special Broast', category: 'broast', price: 550, image: 'https://images.pexels.com/photos/14686449/pexels-photo-14686449.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'br2', name: 'Full Chest Broast', category: 'broast', price: 500, image: 'https://images.pexels.com/photos/12118977/pexels-photo-12118977.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'br3', name: 'Half Broast', category: 'broast', price: 250, image: 'https://images.pexels.com/photos/33101863/pexels-photo-33101863.jpeg?auto=compress&cs=tinysrgb&w=800' },
 
   // HOT SHOTS
@@ -65,7 +65,7 @@ export const MENU_ITEMS: MenuItem[] = [
 
   // SHAWARMA
   { id: 'sh1', name: 'Alaska Special Shawarma Full', category: 'shawarma', price: 200, featured: true, image: 'https://images.pexels.com/photos/11286814/pexels-photo-11286814.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'sh2', name: 'Chicken Cheese Shawarma', category: 'shawarma', price: 150, image: 'https://images.pexels.com/photos/5779423/pexels-photo-5779423.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'sh2', name: 'Chicken Cheese Shawarma', category: 'shawarma', price: 200, image: 'https://images.pexels.com/photos/5779423/pexels-photo-5779423.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sh3', name: 'Vegetable Shawarma Large', category: 'shawarma', price: 200, image: 'https://images.pexels.com/photos/9980749/pexels-photo-9980749.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sh4', name: 'Chatni', category: 'shawarma', price: 50, image: 'https://images.pexels.com/photos/9619560/pexels-photo-9619560.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'sh5', name: 'Special Veg Shawarma', category: 'shawarma', price: 100, image: 'https://images.pexels.com/photos/9980764/pexels-photo-9980764.jpeg?auto=compress&cs=tinysrgb&w=800' },
@@ -114,9 +114,9 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 'f6', name: 'Mayo Fries', category: 'fries', price: 200, image: 'https://images.pexels.com/photos/29653205/pexels-photo-29653205.jpeg?auto=compress&cs=tinysrgb&w=800' },
 
   // DRINKS
-  { id: 'd1', name: 'Fresh Lem', category: 'drinks', price: 150 },
-  { id: 'd2', name: 'Mint Margrita', category: 'drinks', price: 170 },
-  { id: 'd3', name: 'Regular', category: 'drinks', price: 60 },
+  { id: 'd1', name: 'Fresh Lem', category: 'drinks', price: 150, image: 'https://images.pexels.com/photos/12931439/pexels-photo-12931439.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'd2', name: 'Mint Margrita', category: 'drinks', price: 170, image: 'https://images.pexels.com/photos/2480828/pexels-photo-2480828.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'd3', name: 'Regular', category: 'drinks', price: 60, image: 'https://images.pexels.com/photos/4113624/pexels-photo-4113624.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'd4', name: '350 ml', category: 'drinks', price: 90 },
   { id: 'd5', name: '500 ml', category: 'drinks', price: 110 },
   { id: 'd6', name: '1 letter', category: 'drinks', price: 170 },
@@ -136,9 +136,9 @@ export const MENU_ITEMS: MenuItem[] = [
   { id: 'd20', name: 'Orange + Carrot', category: 'drinks', price: 110 },
 
   // ICE CREAM
-  { id: 'ic1', name: 'White Vanilla', category: 'icecream', price: 60 },
-  { id: 'ic2', name: 'Cookies & Cream', category: 'icecream', price: 60 },
-  { id: 'ic3', name: 'Caramel Crunch', category: 'icecream', price: 60 },
+  { id: 'ic1', name: 'White Vanilla', category: 'icecream', price: 60, image: 'https://images.pexels.com/photos/9227972/pexels-photo-9227972.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'ic2', name: 'Cookies & Cream', category: 'icecream', price: 60, image: 'https://images.pexels.com/photos/17321330/pexels-photo-17321330.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'ic3', name: 'Caramel Crunch', category: 'icecream', price: 60, image: 'https://images.pexels.com/photos/9227715/pexels-photo-9227715.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'ic4', name: 'Pistachio', category: 'icecream', price: 60 },
   { id: 'ic5', name: 'Chocolate', category: 'icecream', price: 60 },
   { id: 'ic6', name: 'Strawbarry', category: 'icecream', price: 60 },
@@ -165,6 +165,7 @@ export const DEALS: Deal[] = [
   { id: 'deal15', name: 'DEAL 15', price: 899, items: ['2 Small Pizza'], image: 'https://images.pexels.com/photos/11176613/pexels-photo-11176613.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'deal16', name: 'DEAL 16', price: 1499, items: ['2 Medium Pizza'], image: 'https://images.pexels.com/photos/11176613/pexels-photo-11176613.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'deal17', name: 'DEAL 17', price: 2299, items: ['2 Large Pizza'], image: 'https://images.pexels.com/photos/11176613/pexels-photo-11176613.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'deal18', name: 'DEAL 18', price: 2199, items: ['Small Pizza ×2', 'Broast ×2', 'Fries ×2', 'Hot Wings ×10', 'Cold Drink (1.5 Liter)'], image: 'https://images.pexels.com/photos/33101863/pexels-photo-33101863.jpeg?auto=compress&cs=tinysrgb&w=800' },
 ];
 
 export const getWhatsAppUrl = (itemName: string, price: string | number, variant?: string) => {

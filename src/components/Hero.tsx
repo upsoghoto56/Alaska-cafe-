@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, main order karna chahta hoon Alaska Cafe se.")}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, main order karna chahta hoon Alaska Cafe Ghotki se.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold text-base flex items-center justify-center gap-2 hover:bg-white/20 transition-all"

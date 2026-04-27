@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ShoppingCart, ChevronDown, Utensils } from 'lucide-react';
+import { ShoppingCart, ChevronDown, Utensils, Plus } from 'lucide-react';
 import { MenuItem as MenuItemType } from '../types';
-import { getWhatsAppUrl } from '../constants';
+import { useCart } from '../context/CartContext';
 
 interface MenuItemProps {
   item: MenuItemType;
@@ -12,10 +12,22 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
   const isVariantPrice = typeof item.price === 'object';
   const variants = isVariantPrice ? Object.keys(item.price as object) : [];
   const [selectedVariant, setSelectedVariant] = useState(variants[0] || '');
+  const { addToCart } = useCart();
 
   const currentPrice = isVariantPrice 
     ? (item.price as { [key: string]: number })[selectedVariant] 
     : item.price as number;
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: item.id,
+      name: item.name,
+      price: currentPrice,
+      quantity: 1,
+      variant: selectedVariant || undefined,
+      image: item.image
+    });
+  };
 
   return (
     <motion.div
@@ -83,15 +95,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
             )}
           </div>
           
-          <a
-            href={getWhatsAppUrl(item.name, currentPrice, selectedVariant)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full bg-white/5 border border-gold/30 text-white py-3 rounded-full hover:bg-gold hover:border-gold hover:text-black transition-all flex items-center justify-center gap-2 group/btn font-bold text-sm uppercase tracking-widest mt-4"
+          <button
+            onClick={handleAddToCart}
+            className="w-full bg-gold hover:bg-gold-dark text-white py-3 rounded-full transition-all flex items-center justify-center gap-2 group/btn font-bold text-sm uppercase tracking-widest mt-4 shadow-lg shadow-gold/10"
           >
-            <ShoppingCart className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
-            Order Now
-          </a>
+            <Plus className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+            Add to Cart
+          </button>
         </div>
       </div>
     </motion.div>

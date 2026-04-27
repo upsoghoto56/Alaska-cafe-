@@ -8,7 +8,7 @@ const About: React.FC = () => {
       <div className="text-center mb-20">
         <h1 className="text-5xl md:text-7xl font-serif font-bold luxury-text-gradient mb-6">Our Story</h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-          At Alaska Café & Fast Food, we believe that every meal should be an experience. From our humble beginnings to becoming a destination for food lovers, our journey has been fueled by passion, quality, and a commitment to excellence.
+          At Alaska Café & Fast Food Ghotki, we believe that every meal should be an experience. From our humble beginnings to becoming a destination for food lovers, our journey has been fueled by passion, quality, and a commitment to excellence.
         </p>
       </div>
 

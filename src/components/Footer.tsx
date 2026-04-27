@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-serif font-bold luxury-text-gradient tracking-tighter">ALASKA</span>
-                <span className="text-[10px] tracking-[0.3em] font-medium text-gold uppercase -mt-1">Café & Fast Food</span>
+                <span className="text-[10px] tracking-[0.3em] font-medium text-gold uppercase -mt-1">Café & Fast Food Ghotki</span>
               </div>
             </Link>
             <p className="text-gray-500 text-sm leading-relaxed">
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-white/5 text-center">
           <p className="text-gray-600 text-xs tracking-widest uppercase">
-            &copy; {new Date().getFullYear()} Alaska Café & Fast Food. All rights reserved.
+            &copy; {new Date().getFullYear()} Alaska Café & Fast Food Ghotki. All rights reserved.
           </p>
         </div>
       </div>

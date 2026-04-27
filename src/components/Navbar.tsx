@@ -4,10 +4,17 @@ import { Menu, X, Phone, ShoppingCart, Pizza } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { WHATSAPP_NUMBER } from '../constants';
 
-const Navbar: React.FC = () => {
+import { useCart } from '../context/CartContext';
+
+interface NavbarProps {
+  onOpenCart: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onOpenCart }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { totalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +43,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-col">
             <span className="text-2xl md:text-3xl font-serif font-bold luxury-text-gradient tracking-tighter">ALASKA</span>
-            <span className="text-[10px] tracking-[0.3em] font-medium text-gold uppercase -mt-1">Café & Fast Food</span>
+            <span className="text-[10px] tracking-[0.3em] font-medium text-gold uppercase -mt-1">Café & Fast Food Ghotki</span>
           </div>
         </Link>
 
@@ -53,21 +60,51 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
+          
+          <button
+            onClick={onOpenCart}
+            className="relative p-2 text-white hover:text-gold transition-colors"
+          >
+            <ShoppingCart className="w-6 h-6" />
+            {totalItems > 0 && (
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute -top-1 -right-1 bg-gold text-black text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center"
+              >
+                {totalItems}
+              </motion.span>
+            )}
+          </button>
+
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-gold-dark transition-all shadow-lg shadow-gold/20"
+            className="bg-white/10 border border-white/10 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-white/20 transition-all"
           >
-            <ShoppingCart className="w-4 h-4" />
-            Order Now
+            <Phone className="w-4 h-4" />
+            Order on WhatsApp
           </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <button className="lg:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Mobile Toggle & Cart */}
+        <div className="flex items-center gap-4 lg:hidden">
+          <button
+            onClick={onOpenCart}
+            className="relative p-2 text-white"
+          >
+            <ShoppingCart className="w-6 h-6" />
+            {totalItems > 0 && (
+              <span className="absolute -top-0 -right-0 bg-gold text-black text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </button>
+          <button className="text-white" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
